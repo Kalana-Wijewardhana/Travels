@@ -1,10 +1,10 @@
-"use server"
+"use server";
 
-import { z } from "zod"
-import clientPromise from "@/lib/mongodb"
-import { resend } from "@/lib/resend"
-import { QuoteConfirmationEmail } from "@/components/emails/quote-confirmation"
-import { format } from "date-fns"
+import { z } from "zod";
+import clientPromise from "@/lib/mongodb";
+import { resend } from "@/lib/resend";
+import { QuoteConfirmationEmail } from "@/components/emails/quote-confirmation";
+import { format } from "date-fns";
 
 // Define validation schema
 const quoteSchema = z.object({
@@ -18,21 +18,23 @@ const quoteSchema = z.object({
   budget: z.string().optional(),
   interests: z.string().optional(),
   message: z.string().optional(),
-})
+});
 
-export type QuoteFormData = z.infer<typeof quoteSchema>
+export type QuoteFormData = z.infer<typeof quoteSchema>;
 
 export async function submitQuoteRequest(formData: QuoteFormData) {
   try {
     // Validate form data
-    const validatedData = quoteSchema.parse(formData)
+    const validatedData = quoteSchema.parse(formData);
 
     // Connect to MongoDB
-    const client = await clientPromise
-    const db = client.db("sri_lanka_tourism")
+    const client = await clientPromise;
+    const db = client.db("sri_lanka_tourism");
 
     // Format date for storage and email
-    const formattedDate = validatedData.startDate ? format(validatedData.startDate, "PPP") : "Not specified"
+    const formattedDate = validatedData.startDate
+      ? format(validatedData.startDate, "PPP")
+      : "Not specified";
 
     // Store in MongoDB
     const result = await db.collection("quote_requests").insertOne({
@@ -40,7 +42,7 @@ export async function submitQuoteRequest(formData: QuoteFormData) {
       startDate: validatedData.startDate || null,
       createdAt: new Date(),
       status: "pending",
-    })
+    });
 
     // Send confirmation email
     await resend.emails.send({
@@ -54,7 +56,7 @@ export async function submitQuoteRequest(formData: QuoteFormData) {
         duration: validatedData.duration || "Not specified",
         travelers: validatedData.travelers || "Not specified",
       }),
-    })
+    });
 
     // Send notification to admin
     await resend.emails.send({
@@ -62,11 +64,14 @@ export async function submitQuoteRequest(formData: QuoteFormData) {
       to: "admin@srilankatravels.com",
       subject: "New Tour Quote Request",
       text: `New quote request from ${validatedData.name} (${validatedData.email}) for ${validatedData.destination}. Please check the admin dashboard.`,
-    })
+    });
 
-    return { success: true, message: "Quote request submitted successfully!" }
+    return { success: true, message: "Quote request submitted successfully!" };
   } catch (error) {
-    console.error("Error submitting quote request:", error)
-    return { success: false, message: "Failed to submit quote request. Please try again." }
+    console.error("Error submitting quote request:", error);
+    return {
+      success: false,
+      message: "Failed to submit quote request. Please try again.",
+    };
   }
 }
