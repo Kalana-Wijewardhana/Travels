@@ -18,7 +18,7 @@ export default function HomePage() {
         <HeroSection />
         <ToursSection />
         <HowItWorks />
-        <StoriesSection />
+        {/* <StoriesSection /> */}
         <ExperienceSection />
         <AboutSection />
         <FAQSection />

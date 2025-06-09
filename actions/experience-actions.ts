@@ -1,7 +1,7 @@
-"use server"
+"use server";
 
-import { z } from "zod"
-import clientPromise from "@/lib/mongodb"
+import { z } from "zod";
+import clientPromise from "@/lib/mongodb";
 
 // Define validation schema
 const experienceSchema = z.object({
@@ -9,51 +9,99 @@ const experienceSchema = z.object({
   location: z.string().min(2, "Location must be at least 2 characters"),
   rating: z.number().min(1).max(5),
   experience: z.string().min(10, "Experience must be at least 10 characters"),
-})
+});
 
-export type ExperienceFormData = z.infer<typeof experienceSchema>
+export type ExperienceFormData = z.infer<typeof experienceSchema>;
 
 export async function submitExperience(formData: ExperienceFormData) {
   try {
+    console.log("Processing experience submission:", formData);
+
     // Validate form data
-    const validatedData = experienceSchema.parse(formData)
+    const validatedData = experienceSchema.parse(formData);
 
     // Connect to MongoDB
-    const client = await clientPromise
-    const db = client.db("sri_lanka_tourism")
+    const client = await clientPromise;
+    const db = client.db("sri_lanka_tourism");
 
     // Store in MongoDB
     const result = await db.collection("experiences").insertOne({
       ...validatedData,
       createdAt: new Date(),
-      likes: 0,
-      comments: 0,
-      status: "pending", 
-    })
+    });
 
-    return { success: true, message: "Experience shared successfully! It will be visible after moderation." }
-  } catch (error) {
-    console.error("Error submitting experience:", error)
-    return { success: false, message: "Failed to share experience. Please try again." }
+    console.log("Experience stored in MongoDB with ID:", result.insertedId);
+
+    return {
+      success: true,
+      message:
+        "Experience shared successfully! Thank you for sharing your story.",
+      experienceId: result.insertedId.toString(),
+    };
+  } catch (error: any) {
+    console.error("Error submitting experience:", error);
+
+    // Check if it's a validation error
+    if (error.errors) {
+      return {
+        success: false,
+        message: "Validation error: " + Object.values(error.errors).join(", "),
+      };
+    }
+
+    // Check for MongoDB connection errors
+    if (error.name === "MongoNetworkError") {
+      return {
+        success: false,
+        message: "Database connection error. Please try again later.",
+      };
+    }
+
+    return {
+      success: false,
+      message: "Failed to share experience. Please try again.",
+    };
   }
 }
 
-export async function likeExperience(id: string) {
+export async function getExperiences(page = 1, limit = 20) {
   try {
-    // Connect to MongoDB
-    const client = await clientPromise
-    const db = client.db("sri_lanka_tourism")
+    const client = await clientPromise;
+    const db = client.db("sri_lanka_tourism");
 
-    // Update likes count
-    const result = await db.collection("experiences").updateOne({id: id }, { $inc: { likes: 1 } })
+    const skip = (page - 1) * limit;
 
-    if (result.modifiedCount === 0) {
-      return { success: false, message: "Experience not found" }
-    }
+    const experiences = await db
+      .collection("experiences")
+      .find({})
+      .sort({ createdAt: -1 })
+      .skip(skip)
+      .limit(limit)
+      .toArray();
 
-    return { success: true, message: "Experience liked successfully" }
+    // Convert ObjectId to string for client-side use and ensure all required fields exist
+    const formattedExperiences = experiences.map((exp) => ({
+      id: exp._id.toString(),
+      name: exp.name || "",
+      location: exp.location || "",
+      rating: exp.rating || 5,
+      experience: exp.experience || "",
+      createdAt: exp.createdAt
+        ? exp.createdAt.toISOString()
+        : new Date().toISOString(),
+      _id: undefined, // Remove the MongoDB ObjectId
+    }));
+
+    return {
+      success: true,
+      experiences: formattedExperiences,
+    };
   } catch (error) {
-    console.error("Error liking experience:", error)
-    return { success: false, message: "Failed to like experience. Please try again." }
+    console.error("Error fetching experiences:", error);
+    return {
+      success: false,
+      experiences: [],
+      message: "Failed to fetch experiences",
+    };
   }
 }

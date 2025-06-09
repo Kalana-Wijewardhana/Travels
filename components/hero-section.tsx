@@ -162,7 +162,7 @@ export function HeroSection() {
                   className="bg-emerald-600 hover:bg-emerald-700 text-base md:text-lg px-6 py-5 md:px-8 md:py-6 shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto"
                   onClick={() =>
                     window.open(
-                      "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+                      "https://www.youtube.com/watch?v=KCn5Gc38oO4",
                       "_blank"
                     )
                   }
