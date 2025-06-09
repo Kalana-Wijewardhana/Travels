@@ -17,13 +17,12 @@ import {
 import { QuoteModal } from "@/components/quote-modal";
 import { TourDetailsModal } from "@/components/tour-details-modal";
 import { openWhatsApp, whatsappMessages } from "@/lib/whatsapp";
-// import { openWhatsApp, whatsappMessages } from "@/lib/whatsapp";
 
 const tours = [
   {
     id: 1,
-    title: "Cultural Triangle Adventure",
-    location: "Sigiriya, Dambulla, Polonnaruwa",
+    title: "3 Days - A Quick Adventure",
+    location: "Kandy, Colombo",
     duration: "3 Days",
     groupSize: "8-12 People",
     rating: 4.9,
@@ -40,7 +39,7 @@ const tours = [
       "UNESCO Sites",
     ],
     description:
-      "Discover the ancient wonders of Sri Lanka's Cultural Triangle, where history comes alive through magnificent rock fortresses, sacred cave temples, and royal palaces. This 3-day adventure takes you through UNESCO World Heritage sites that showcase over 2,000 years of Sri Lankan civilization.",
+      "Experience the best of Sri Lanka in just 3 days! Discover ancient temples, UNESCO heritage sites, and vibrant local culture. Enjoy flavorful Sri Lankan cuisine and create unforgettable family memories on this fun, relaxing getaway. Perfect for a quick escape filled with history, adventure, and delicious food!",
     itinerary: [
       {
         day: 1,
@@ -61,9 +60,9 @@ const tours = [
         title: "Dambulla Cave Temple & Polonnaruwa",
         description: "Explore sacred caves and ancient royal capital",
         activities: [
-          "Dambulla Cave Temple visit",
-          "Golden Buddha statues",
-          "Polonnaruwa ancient city tour",
+          "Temple of the Tooth visit",
+          "Kandy Lake Walk",
+          "Cultural Show",
           "Royal palace ruins",
         ],
         meals: ["Breakfast", "Lunch", "Dinner"],
@@ -103,6 +102,7 @@ const tours = [
     bestTime: "December to March",
     difficulty: "Moderate",
   },
+
   {
     id: 2,
     title: "Hill Country Explorer",
@@ -400,16 +400,11 @@ export function ToursSection() {
 
                     {/* Price Badge */}
                     <Badge className="absolute top-4 left-4 bg-emerald-600 z-10">
-                      {tour.price}
-                    </Badge>
-
-                    {/* Duration Badge */}
-                    <Badge className="absolute top-4 right-4 bg-black/50 text-white z-10">
                       {tour.duration}
                     </Badge>
 
                     {/* Image Counter */}
-                    <div className="absolute bottom-4 right-4 bg-black/50 backdrop-blur-sm rounded-lg px-2 py-1">
+                    <div className="absolute top-4 right-4 bg-black/50 backdrop-blur-sm rounded-lg px-2 py-1">
                       <span className="text-xs text-white font-medium">
                         {(currentImageIndex[tour.id] || 0) + 1}/
                         {tour.images.length}
@@ -462,10 +457,6 @@ export function ToursSection() {
                       <div className="flex items-center">
                         <Clock className="w-4 h-4 mr-1" />
                         {tour.duration}
-                      </div>
-                      <div className="flex items-center">
-                        <Users className="w-4 h-4 mr-1" />
-                        {tour.groupSize}
                       </div>
                       <div className="flex items-center">
                         <Star className="w-4 h-4 mr-1 text-yellow-400 fill-current" />

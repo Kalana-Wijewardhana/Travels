@@ -203,10 +203,10 @@ export function TourDetailsModal({
               </button>
 
               {/* Price Badge */}
-              <div className="absolute top-4 left-4 bg-emerald-600 text-white rounded-lg px-4 py-2">
+              {/* <div className="absolute top-4 left-4 bg-emerald-600 text-white rounded-lg px-4 py-2">
                 <span className="text-lg font-bold">{tourDetails.price}</span>
                 <span className="text-sm opacity-90"> per person</span>
-              </div>
+              </div> */}
             </div>
 
             {/* Content */}
@@ -235,7 +235,7 @@ export function TourDetailsModal({
                 </div>
 
                 {/* Quick Info */}
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-6">
                   <div className="flex items-center space-x-2">
                     <Clock className="w-5 h-5 text-emerald-600" />
                     <div>
@@ -244,13 +244,13 @@ export function TourDetailsModal({
                     </div>
                   </div>
 
-                  <div className="flex items-center space-x-2">
+                  {/* <div className="flex items-center space-x-2">
                     <Users className="w-5 h-5 text-emerald-600" />
                     <div>
                       <div className="text-sm text-slate-600">Group Size</div>
                       <div className="font-semibold">{tour.groupSize}</div>
                     </div>
-                  </div>
+                  </div> */}
 
                   <div className="flex items-center space-x-2">
                     <Star className="w-5 h-5 text-yellow-400 fill-current" />
@@ -352,14 +352,14 @@ export function TourDetailsModal({
                                 {tourDetails.bestTime}
                               </span>
                             </div>
-                            <div className="flex justify-between">
+                            {/* <div className="flex justify-between">
                               <span className="text-slate-600">
                                 Group Size:
                               </span>
                               <span className="font-medium">
                                 {tour.groupSize}
                               </span>
-                            </div>
+                            </div> */}
                             <div className="flex justify-between">
                               <span className="text-slate-600">Duration:</span>
                               <span className="font-medium">
