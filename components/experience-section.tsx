@@ -10,7 +10,14 @@ import { Textarea } from "@/components/ui/textarea";
 import { Input } from "@/components/ui/input";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
-import { Star, Loader2, RefreshCw, MapPin } from "lucide-react";
+import {
+  Star,
+  Loader2,
+  RefreshCw,
+  MapPin,
+  AlertCircle,
+  Database,
+} from "lucide-react";
 import { submitExperience, getExperiences } from "@/actions/experience-actions";
 import { toast } from "@/components/ui/use-toast";
 
@@ -38,54 +45,92 @@ export function ExperienceSection() {
   const [currentPage, setCurrentPage] = useState(1);
   const [hasMore, setHasMore] = useState(true);
   const [isLoadingMore, setIsLoadingMore] = useState(false);
+  const [connectionStatus, setConnectionStatus] = useState<string | null>(null);
   const experiencesPerPage = 8;
 
   // Load experiences on component mount
   useEffect(() => {
     loadExperiences(true);
+    checkDatabaseStatus();
   }, []);
+
+  const checkDatabaseStatus = async () => {
+    try {
+      const response = await fetch("/api/experience/status");
+      const status = await response.json();
+
+      if (status.success) {
+        setConnectionStatus(
+          `Connected - ${status.experiencesCount} experiences in database`
+        );
+      } else {
+        setConnectionStatus(`Connection failed: ${status.message}`);
+        console.error("Database status:", status);
+      }
+    } catch (error) {
+      console.error("Failed to check database status:", error);
+      setConnectionStatus("Status check failed");
+    }
+  };
 
   const loadExperiences = async (reset = false) => {
     if (reset) {
       setIsLoading(true);
       setCurrentPage(1);
+      setError(null);
     } else {
       setIsLoadingMore(true);
     }
 
     try {
-      const page = reset ? 1 : currentPage + 1; // Fix: increment page before API call
+      const page = reset ? 1 : currentPage + 1;
+      console.log(`Loading experiences - Page: ${page}, Reset: ${reset}`);
+
       const result = await getExperiences(page, experiencesPerPage);
+      console.log("Load experiences result:", result);
 
       if (result.success && result.experiences) {
         const typedExperiences = result.experiences.map((exp) => ({
           id: exp.id,
-          name: exp.name || "",
-          location: exp.location || "",
+          name: exp.name || "Anonymous",
+          location: exp.location || "Unknown Location",
           rating: exp.rating || 5,
-          experience: exp.experience || "",
+          experience: exp.experience || "No experience shared",
           createdAt: exp.createdAt || new Date().toISOString(),
         })) as Experience[];
 
         if (reset) {
           setExperiences(typedExperiences);
-          setCurrentPage(1); // Set to 1 for reset
+          setCurrentPage(1);
         } else {
           setExperiences((prev) => [...prev, ...typedExperiences]);
-          setCurrentPage(page); // Update to the new page number
+          setCurrentPage(page);
         }
 
         setHasMore(typedExperiences.length === experiencesPerPage);
+        setError(null);
       } else {
-        console.error("Failed to load experiences:", result.message);
+        const errorMessage = result.message || "Failed to load experiences";
+        console.error("Failed to load experiences:", errorMessage);
+        setError(errorMessage);
+
         toast({
           variant: "destructive",
-          title: "Error",
-          description: "Failed to load experiences. Please try again.",
+          title: "Error Loading Experiences",
+          description: errorMessage,
         });
       }
-    } catch (error) {
+    } catch (error: any) {
       console.error("Error loading experiences:", error);
+      const errorMessage = error.message || "Network error occurred";
+      setError(errorMessage);
+
+      toast({
+        variant: "destructive",
+        title: "Network Error",
+        description:
+          "Failed to connect to the server. Please check your internet connection.",
+      });
     } finally {
       setIsLoading(false);
       setIsLoadingMore(false);
@@ -109,12 +154,15 @@ export function ExperienceSection() {
         return;
       }
 
+      console.log("Submitting experience:", newExperience);
       const result = await submitExperience({
         name: newExperience.name,
         location: newExperience.location,
         rating: newExperience.rating,
         experience: newExperience.experience,
       });
+
+      console.log("Submit result:", result);
 
       if (result.success) {
         // Reset form
@@ -134,24 +182,24 @@ export function ExperienceSection() {
           description: "Thank you for sharing your experience!",
         });
       } else {
-        setError(result.message || "Something went wrong. Please try again.");
+        const errorMessage =
+          result.message || "Something went wrong. Please try again.";
+        setError(errorMessage);
         toast({
           variant: "destructive",
           title: "Error",
-          description:
-            result.message ||
-            "Failed to share your experience. Please try again.",
+          description: errorMessage,
         });
       }
     } catch (err: any) {
       console.error("Error submitting experience:", err);
-      setError(
-        err.message || "An unexpected error occurred. Please try again."
-      );
+      const errorMessage =
+        err.message || "An unexpected error occurred. Please try again.";
+      setError(errorMessage);
       toast({
         variant: "destructive",
         title: "Error",
-        description: "An unexpected error occurred. Please try again.",
+        description: errorMessage,
       });
     } finally {
       setIsSubmitting(false);
@@ -224,7 +272,7 @@ export function ExperienceSection() {
             your own adventures
           </p>
 
-          <div className="flex justify-center gap-4">
+          <div className="flex justify-center gap-4 mb-4">
             <Button
               onClick={() => setShowForm(!showForm)}
               className="bg-emerald-600 hover:bg-emerald-700"
@@ -233,6 +281,31 @@ export function ExperienceSection() {
               Share Your Experience
             </Button>
           </div>
+
+          {/* Connection Status */}
+          {connectionStatus && (
+            <div className="max-w-2xl mx-auto mb-4">
+              <Badge variant="outline" className="text-xs">
+                {connectionStatus}
+              </Badge>
+            </div>
+          )}
+
+          {/* Error Display */}
+          {error && (
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="max-w-2xl mx-auto mb-4"
+            >
+              <div className="bg-red-50 border border-red-200 rounded-lg p-4 flex items-center space-x-2">
+                <AlertCircle className="w-5 h-5 text-red-500 flex-shrink-0" />
+                <div className="text-sm text-red-700">
+                  <strong>Error:</strong> {error}
+                </div>
+              </div>
+            </motion.div>
+          )}
         </motion.div>
 
         {/* Experience Form */}
@@ -320,16 +393,6 @@ export function ExperienceSection() {
                       className="resize-none"
                     />
 
-                    {error && (
-                      <motion.p
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        className="text-sm text-red-500 bg-red-50 p-3 rounded-lg"
-                      >
-                        {error}
-                      </motion.p>
-                    )}
-
                     <div className="flex space-x-4 pt-4">
                       <Button
                         type="submit"
@@ -374,7 +437,7 @@ export function ExperienceSection() {
         )}
 
         {/* No Experiences State */}
-        {!isLoading && experiences.length === 0 && (
+        {!isLoading && experiences.length === 0 && !error && (
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -502,6 +565,7 @@ export function ExperienceSection() {
             ))}
           </motion.div>
         )}
+
         {!isLoading && experiences.length > 0 && hasMore && (
           <div className="flex justify-center mt-8">
             <Button

@@ -57,7 +57,7 @@ export function Header() {
   const navItems = [
     { name: "Holidays & Tours", id: "tours" },
     { name: "Experiences", id: "experiences" },
-    { name: "Success Stories", id: "stories" },
+    // { name: "Success Stories", id: "stories" },
     { name: "About us", id: "about" },
     { name: "FAQ", id: "faq" },
   ];

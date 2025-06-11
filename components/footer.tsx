@@ -1,17 +1,44 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { Globe, Mail, Phone, MapPin, Facebook, Twitter, Instagram, Youtube } from "lucide-react"
+import { motion } from "framer-motion";
+import {
+  Globe,
+  Mail,
+  Phone,
+  MapPin,
+  Facebook,
+  Twitter,
+  Instagram,
+  Youtube,
+} from "lucide-react";
 
 export function Footer() {
   const socialLinks = [
-    { icon: Facebook, href: "#", label: "Facebook" },
-    { icon: Twitter, href: "#", label: "Twitter" },
-    { icon: Instagram, href: "#", label: "Instagram" },
+    {
+      icon: Facebook,
+      href: "https://www.facebook.com/share/1BgfpKU5aR/",
+      label: "Facebook",
+    },
+    {
+      icon: Twitter,
+      href: "https://x.com/AnujaDee?t=aVk8dqhLS1NSbTW6NbReVg&s=08",
+      label: "Twitter",
+    },
+    {
+      icon: Instagram,
+      href: "https://www.instagram.com/anuja_travels?igsh=djJkb3R3cjhuMGVh",
+      label: "Instagram",
+    },
     { icon: Youtube, href: "#", label: "YouTube" },
-  ]
+  ];
 
-  const quickLinks = ["Holidays & Tours", "Success Stories", "About Us", "FAQ", "Contact", "Privacy Policy"]
+  const quickLinks = [
+    "Holidays & Tours",
+    "About Us",
+    "FAQ",
+    "Contact",
+    "Privacy Policy",
+  ];
 
   return (
     <footer className="bg-slate-900 text-white py-16">
@@ -32,13 +59,16 @@ export function Footer() {
               <span className="text-xl font-bold">Sri Lanka Travels</span>
             </div>
             <p className="text-slate-400 leading-relaxed">
-              Discover the pearl of the Indian Ocean with our expert-guided tours and authentic local experiences.
+              Discover the pearl of the Indian Ocean with our expert-guided
+              tours and authentic local experiences.
             </p>
             <div className="flex space-x-4">
               {socialLinks.map((social, index) => (
                 <motion.a
                   key={social.label}
                   href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   whileHover={{ scale: 1.2, y: -2 }}
                   className="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center hover:bg-emerald-600 transition-colors"
                   aria-label={social.label}
@@ -60,7 +90,10 @@ export function Footer() {
             <ul className="space-y-2">
               {quickLinks.map((link) => (
                 <li key={link}>
-                  <a href="#" className="text-slate-400 hover:text-emerald-400 transition-colors">
+                  <a
+                    href="#"
+                    className="text-slate-400 hover:text-emerald-400 transition-colors"
+                  >
                     {link}
                   </a>
                 </li>
@@ -87,7 +120,9 @@ export function Footer() {
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-emerald-400" />
-                <span className="text-slate-400">anujatravelstoursdee@gmail.com</span>
+                <span className="text-slate-400">
+                  anujatravelstoursdee@gmail.com
+                </span>
               </div>
             </div>
           </motion.div>
@@ -100,7 +135,9 @@ export function Footer() {
             viewport={{ once: true }}
           >
             <h3 className="text-lg font-semibold mb-4">Newsletter</h3>
-            <p className="text-slate-400 mb-4">Subscribe to get travel tips and exclusive offers.</p>
+            <p className="text-slate-400 mb-4">
+              Subscribe to get travel tips and exclusive offers.
+            </p>
             <div className="space-y-2">
               <input
                 type="email"
@@ -125,5 +162,5 @@ export function Footer() {
         </motion.div>
       </div>
     </footer>
-  )
+  );
 }
