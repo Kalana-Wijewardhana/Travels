@@ -280,23 +280,6 @@ export function ExperienceSection() {
             >
               Share Your Experience
             </Button>
-            <Button
-              onClick={() => loadExperiences(true)}
-              variant="outline"
-              size="lg"
-              disabled={isLoading}
-            >
-              {isLoading ? (
-                <Loader2 className="w-4 h-4 mr-2 animate-spin" />
-              ) : (
-                <RefreshCw className="w-4 h-4 mr-2" />
-              )}
-              Refresh
-            </Button>
-            <Button onClick={checkDatabaseStatus} variant="outline" size="lg">
-              <Database className="w-4 h-4 mr-2" />
-              Check Status
-            </Button>
           </div>
 
           {/* Connection Status */}
