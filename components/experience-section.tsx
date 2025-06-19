@@ -51,27 +51,7 @@ export function ExperienceSection() {
   // Load experiences on component mount
   useEffect(() => {
     loadExperiences(true);
-    checkDatabaseStatus();
   }, []);
-
-  const checkDatabaseStatus = async () => {
-    try {
-      const response = await fetch("/api/experience/status");
-      const status = await response.json();
-
-      if (status.success) {
-        setConnectionStatus(
-          `Connected - ${status.experiencesCount} experiences in database`
-        );
-      } else {
-        setConnectionStatus(`Connection failed: ${status.message}`);
-        console.error("Database status:", status);
-      }
-    } catch (error) {
-      console.error("Failed to check database status:", error);
-      setConnectionStatus("Status check failed");
-    }
-  };
 
   const loadExperiences = async (reset = false) => {
     if (reset) {
@@ -281,15 +261,6 @@ export function ExperienceSection() {
               Share Your Experience
             </Button>
           </div>
-
-          {/* Connection Status */}
-          {connectionStatus && (
-            <div className="max-w-2xl mx-auto mb-4">
-              <Badge variant="outline" className="text-xs">
-                {connectionStatus}
-              </Badge>
-            </div>
-          )}
 
           {/* Error Display */}
           {error && (
