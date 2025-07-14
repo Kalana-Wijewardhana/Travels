@@ -8,7 +8,6 @@ import { Badge } from "@/components/ui/badge";
 import {
   MapPin,
   Clock,
-  Users,
   Star,
   ChevronLeft,
   ChevronRight,
@@ -1524,7 +1523,7 @@ export function ToursSection() {
         });
         return newIndex;
       });
-    }, 3000); // Change image every 3 seconds
+    }, 3000);
 
     return () => clearInterval(interval);
   }, []);
@@ -1535,25 +1534,25 @@ export function ToursSection() {
   };
 
   return (
-    <section id="tours" className="py-20 bg-white">
-      <div className="container mx-auto px-4">
+    <section id="tours" className="py-12 sm:py-16 lg:py-20 bg-white">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-8 sm:mb-12 lg:mb-16"
         >
-          <h2 className="text-4xl lg:text-5xl font-bold text-slate-800 mb-4">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-slate-800 mb-3 sm:mb-4">
             Popular <span className="text-emerald-600">Tours</span>
           </h2>
-          <p className="text-xl text-slate-600 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg lg:text-xl text-slate-600 max-w-2xl mx-auto px-4">
             Discover Sri Lanka's most breathtaking destinations with our
             expertly crafted tours
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
           {tours.map((tour, index) => (
             <motion.div
               key={tour.id}
@@ -1607,12 +1606,12 @@ export function ToursSection() {
                     {/* Overlay */}
                     <div className="absolute inset-0 bg-black/20 group-hover/image:bg-black/10 transition-colors duration-300"></div>
 
-                    {/* Image Navigation Dots */}
-                    <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                    {/* Image Navigation Dots - Made larger for mobile */}
+                    <div className="absolute bottom-3 sm:bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
                       {tour.images.map((_, imgIndex) => (
                         <motion.button
                           key={imgIndex}
-                          className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                          className={`w-2.5 h-2.5 sm:w-2 sm:h-2 rounded-full transition-all duration-300 ${
                             (currentImageIndex[tour.id] || 0) === imgIndex
                               ? "bg-white scale-125"
                               : "bg-white/50 hover:bg-white/75"
@@ -1630,12 +1629,12 @@ export function ToursSection() {
                     </div>
 
                     {/* Price Badge */}
-                    <Badge className="absolute top-4 left-4 bg-emerald-600 z-10">
+                    <Badge className="absolute top-3 sm:top-4 left-3 sm:left-4 bg-emerald-600 z-10 text-xs sm:text-sm">
                       {tour.duration}
                     </Badge>
 
                     {/* Image Counter */}
-                    <div className="absolute top-4 right-4 bg-black/50 backdrop-blur-sm rounded-lg px-2 py-1">
+                    <div className="absolute top-3 sm:top-4 right-3 sm:right-4 bg-black/50 backdrop-blur-sm rounded-lg px-2 py-1">
                       <span className="text-xs text-white font-medium">
                         {(currentImageIndex[tour.id] || 0) + 1}/
                         {tour.images.length}
@@ -1643,9 +1642,9 @@ export function ToursSection() {
                     </div>
                   </div>
 
-                  {/* Navigation Arrows */}
+                  {/* Navigation Arrows - Made larger and more touch-friendly for mobile */}
                   <button
-                    className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white rounded-full p-2 opacity-0 group-hover/image:opacity-100 transition-all duration-300 z-10"
+                    className="absolute left-1 sm:left-2 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white rounded-full p-2 sm:p-2 opacity-0 group-hover/image:opacity-100 transition-all duration-300 z-10 touch-manipulation"
                     onClick={() =>
                       setCurrentImageIndex((prev) => ({
                         ...prev,
@@ -1655,11 +1654,10 @@ export function ToursSection() {
                       }))
                     }
                   >
-                    <ChevronLeft className="w-4 h-4" />
+                    <ChevronLeft className="w-4 h-4 sm:w-4 sm:h-4" />
                   </button>
-
                   <button
-                    className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white rounded-full p-2 opacity-0 group-hover/image:opacity-100 transition-all duration-300 z-10"
+                    className="absolute right-1 sm:right-2 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white rounded-full p-2 sm:p-2 opacity-0 group-hover/image:opacity-100 transition-all duration-300 z-10 touch-manipulation"
                     onClick={() =>
                       setCurrentImageIndex((prev) => ({
                         ...prev,
@@ -1668,67 +1666,73 @@ export function ToursSection() {
                       }))
                     }
                   >
-                    <ChevronRight className="w-4 h-4" />
+                    <ChevronRight className="w-4 h-4 sm:w-4 sm:h-4" />
                   </button>
                 </motion.div>
 
-                <CardContent className="p-6 flex-1 flex flex-col bg-slate-50">
-                  <div className="space-y-4 flex-1">
+                <CardContent className="p-4 sm:p-6 flex-1 flex flex-col bg-slate-50">
+                  <div className="space-y-3 sm:space-y-4 flex-1">
                     <div>
-                      <h3 className="text-xl font-bold text-slate-800 mb-2">
+                      <h3 className="text-lg sm:text-xl font-bold text-slate-800 mb-2 line-clamp-2">
                         {tour.title}
                       </h3>
                       <div className="flex items-center text-slate-600 text-sm mb-2">
-                        <MapPin className="w-4 h-4 mr-1" />
-                        {tour.location}
+                        <MapPin className="w-4 h-4 mr-1 flex-shrink-0" />
+                        <span className="truncate">{tour.location}</span>
                       </div>
                     </div>
 
                     <div className="flex items-center justify-between text-sm text-slate-600">
                       <div className="flex items-center">
                         <Clock className="w-4 h-4 mr-1" />
-                        {tour.duration}
+                        <span>{tour.duration}</span>
                       </div>
                       <div className="flex items-center">
                         <Star className="w-4 h-4 mr-1 text-yellow-400 fill-current" />
-                        {tour.rating}
+                        <span>{tour.rating}</span>
                       </div>
                     </div>
 
-                    <div className="flex flex-wrap gap-2">
+                    <div className="flex flex-wrap gap-1.5 sm:gap-2">
                       {tour.highlights.slice(0, 3).map((highlight, idx) => (
                         <Badge
                           key={idx}
                           variant="secondary"
-                          className="text-xs"
+                          className="text-xs px-2 py-1"
                         >
                           {highlight}
                         </Badge>
                       ))}
                       {tour.highlights.length > 3 && (
-                        <Badge variant="secondary" className="text-xs">
+                        <Badge
+                          variant="secondary"
+                          className="text-xs px-2 py-1"
+                        >
                           +{tour.highlights.length - 3} more
                         </Badge>
                       )}
                     </div>
                   </div>
+
                   <div className="mt-auto pt-4">
-                    <div className="flex gap-2">
+                    <div className="flex flex-col xs:flex-row gap-2">
                       <Button
-                        className="flex-1 bg-emerald-600 hover:bg-emerald-700"
+                        className="flex-1 bg-emerald-600 hover:bg-emerald-700 text-sm sm:text-base"
                         onClick={() => handleBookNow(tour)}
                       >
-                        View
+                        View Details
                       </Button>
                       <Button
                         variant="outline"
                         size="sm"
-                        className="border-green-200 text-green-600 hover:bg-green-50"
+                        className="border-green-200 text-green-600 hover:bg-green-50 xs:w-auto w-full bg-transparent"
                         onClick={() =>
                           openWhatsApp(whatsappMessages.inquiry(tour.location))
                         }
                       >
-                        <MessageCircle className="w-4 h-4" />
+                        <MessageCircle className="w-4 h-4 mr-1 sm:mr-2" />
+                        <span className="xs:hidden sm:inline">Inquire</span>
+                        <span className="hidden xs:inline sm:hidden">Chat</span>
                       </Button>
                     </div>
                   </div>
