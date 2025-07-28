@@ -20,7 +20,7 @@ import { openWhatsApp, whatsappMessages } from "@/lib/whatsapp";
 const tours = [
   {
     id: 1,
-    title: "3 Days - A Quick Adventure",
+    title: "Sri Lanka Itinerary: 3 Days",
     location: "Kandy, Colombo",
     duration: "3 Days",
     groupSize: "8-12 People",
@@ -83,10 +83,10 @@ const tours = [
     ],
     inclusions: [
       "Professional English-speaking guide",
-      "All accommodation (twin sharing)",
-      "All meals as mentioned",
+      // "All accommodation (twin sharing)",
+      // "All meals as mentioned",
       "Air-conditioned transportation",
-      "All entrance fees",
+      // "All entrance fees",
       "Bottled water",
       "Government taxes",
     ],
@@ -104,7 +104,7 @@ const tours = [
 
   {
     id: 2,
-    title: "Hill Country Explorer",
+    title: "Sri Lanka Itinerary: 4 Days",
     location: "Kandy, Ella, Nuwara Eliya",
     duration: "4 Days",
     groupSize: "6-10 People",
@@ -182,7 +182,7 @@ const tours = [
   },
   {
     id: 3,
-    title: "Coastal Paradise",
+    title: "Sri Lanka Itinerary: 5 Days",
     location: "Galle, Mirissa, Unawatuna",
     duration: "5 Days",
     groupSize: "4-8 People",
@@ -273,7 +273,7 @@ const tours = [
   },
   {
     id: 4,
-    title: "Sri Lanka 4 Days - Culture Shores",
+    title: "Sri Lanka Itinerary: 4 Days",
     location: "Kandy, Bentota, Colombo",
     duration: "4 Days",
     groupSize: "4-8 People",
@@ -336,7 +336,7 @@ const tours = [
   },
   {
     id: 5,
-    title: "Sri Lanka 5 Days - Island Escape",
+    title: "Sri Lanka Itinerary: 5 Days",
     location: "Sigiriya,Kandy,Bentota",
     duration: "5 Days",
     groupSize: "4-8 People",
@@ -407,7 +407,7 @@ const tours = [
   },
   {
     id: 6,
-    title: "Sri Lanka 12 Days - Serendip Escape",
+    title: "Sri Lanka Itinerary: 12 Days",
     location:
       "Polonnaruwa,Sigiriya,Kandy,Ella,Yala,Mirissa,Sinharaja,Bentota,Colombo",
     duration: "12 Days",
@@ -551,7 +551,7 @@ const tours = [
   },
   {
     id: 7,
-    title: "Sri Lanka 6 Days - Temples, Wildlife & Beach",
+    title: "Sri Lanka Itinerary: 6 Days",
     location: "Kandy,Nuwara Eliya,Udawalawe,Galle,Colombo",
     duration: "6 Days",
     groupSize: "Family",
@@ -645,7 +645,7 @@ const tours = [
   },
   {
     id: 8,
-    title: "Sri Lanka 7 Days - Island Adventure",
+    title: "Sri Lanka Itinerary: 7 Days",
     location: "Sigiriya,Kandy,Nuwara Eliya,Yala,Bentota",
     duration: "7 Days",
     groupSize: "Family",
@@ -744,7 +744,7 @@ const tours = [
   },
   {
     id: 9,
-    title: "Sri Lanka 8 Days - A Journey Through Paradise",
+    title: "Sri Lanka Itinerary: 8 Days",
     location: "Sigiriya,Kandy,Nuwara Eliya,Yala,Bentota,Colombo",
     duration: "8 Days",
     groupSize: "Family",
@@ -853,7 +853,7 @@ const tours = [
   },
   {
     id: 10,
-    title: "Sri Lanka Tour Package 5 Dayse",
+    title: "Sri Lanka Itinerary: 5 Days",
     location: "Kandy,Nuwara Eliya,Kitulgala,Bentota",
     duration: "5 Days",
     groupSize: "Family",
@@ -961,7 +961,7 @@ const tours = [
   },
   {
     id: 11,
-    title: "Sri Lanka Tour Itinerary 9 Days",
+    title: "Sri Lanka Itinerary: 9 Days",
     location: "Negombo,Kandy,Nuwara Eliya,Yala,Bentota,Colombo",
     duration: "9 Days",
     groupSize: "Friends",
@@ -1084,7 +1084,7 @@ const tours = [
   },
   {
     id: 12,
-    title: "Sri Lanka 8 Days - The Local Thrill Route",
+    title: "Sri Lanka Itinerary: 8 Days",
     location: "Sigiriya,Negombo,Kandy,Nuwara Eliya,Kitulgala,Bentota,Colombo",
     duration: "8 Days",
     groupSize: "Family",
@@ -1197,7 +1197,7 @@ const tours = [
   },
   {
     id: 13,
-    title: "Sri Lanka 15 Days of Romantic Bliss",
+    title: "Sri Lanka Itinerary: 15 Days",
     location: "Negombo,Dambulla,Pussellawa, Ella, Yala,Tangalle,Galle",
     duration: "15 Days",
     groupSize: "Couple",
@@ -1402,7 +1402,7 @@ const tours = [
   },
   {
     id: 16,
-    title: "Sri Lanka 7 Days of Love and Adventure",
+    title: "Sri Lanka Itinerary: 7 Days",
     location: "Negombo,Kandy,Hatton,Galle",
     duration: "7 Days",
     groupSize: "Family",
@@ -1720,7 +1720,7 @@ export function ToursSection() {
                         className="flex-1 bg-emerald-600 hover:bg-emerald-700 text-sm sm:text-base"
                         onClick={() => handleBookNow(tour)}
                       >
-                        View Details
+                        View Detailss
                       </Button>
                       <Button
                         variant="outline"
