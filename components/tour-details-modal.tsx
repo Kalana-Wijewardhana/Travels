@@ -121,10 +121,10 @@ export function TourDetailsModal({
     ],
     inclusions: tour.inclusions || [
       "Professional English-speaking guide",
-      "All accommodation (twin sharing basis)",
-      "All meals as mentioned in itinerary",
+      // "All accommodation (twin sharing basis)",
+      // "All meals as mentioned in itinerary",
       "Transportation in air-conditioned vehicle",
-      "All entrance fees and permits",
+      // "All entrance fees and permits",
       "Bottled water during tours",
       "Government taxes and service charges",
     ],
@@ -260,7 +260,7 @@ export function TourDetailsModal({
                     </div>
                   </div>
 
-                  <div className="flex items-center space-x-2">
+                  {/* <div className="flex items-center space-x-2">
                     <Calendar className="w-5 h-5 text-emerald-600" />
                     <div>
                       <div className="text-sm text-slate-600">Best Time</div>
@@ -268,7 +268,7 @@ export function TourDetailsModal({
                         {tourDetails.bestTime}
                       </div>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
 
                 {/* Highlights */}
@@ -330,7 +330,7 @@ export function TourDetailsModal({
                         </CardContent>
                       </Card>
 
-                      <Card>
+                      {/* <Card>
                         <CardContent className="p-4">
                           <h4 className="font-semibold mb-3">
                             Tour Information
@@ -352,14 +352,14 @@ export function TourDetailsModal({
                                 {tourDetails.bestTime}
                               </span>
                             </div>
-                            {/* <div className="flex justify-between">
+                            <div className="flex justify-between">
                               <span className="text-slate-600">
                                 Group Size:
                               </span>
                               <span className="font-medium">
                                 {tour.groupSize}
                               </span>
-                            </div> */}
+                            </div>
                             <div className="flex justify-between">
                               <span className="text-slate-600">Duration:</span>
                               <span className="font-medium">
@@ -368,7 +368,7 @@ export function TourDetailsModal({
                             </div>
                           </div>
                         </CardContent>
-                      </Card>
+                      </Card> */}
                     </div>
                   </div>
                 </TabsContent>
@@ -412,7 +412,7 @@ export function TourDetailsModal({
                                   </ul>
                                 </div>
 
-                                <div>
+                                {/* <div>
                                   <h5 className="font-medium mb-2 flex items-center">
                                     <Utensils className="w-4 h-4 mr-1 text-emerald-600" />
                                     Meals
@@ -440,7 +440,7 @@ export function TourDetailsModal({
                                       {day.accommodation}
                                     </p>
                                   </div>
-                                )}
+                                )} */}
                               </div>
                             </div>
                           </div>
