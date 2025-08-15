@@ -38,7 +38,7 @@ const tours = [
       "UNESCO Sites",
     ],
     description:
-      "Experience the best of Sri Lanka in just 3 days! Discover ancient temples, UNESCO heritage sites, and vibrant local culture. Enjoy flavorful Sri Lankan cuisine and create unforgettable family memories on this fun, relaxing getaway. Perfect for a quick escape filled with history, adventure, and delicious food!",
+      "For 3-day adventure in Sri Lanka packed with history, culture, UNESCO wonders, family-friendly experiences, and unforgettable food, these top picks ensure you experience the very best the island has to offer.",
     itinerary: [
       {
         day: 1,
@@ -122,7 +122,7 @@ const tours = [
       "Cool Climate",
     ],
     description:
-      "Journey through Sri Lanka's breathtaking hill country, where emerald tea plantations carpet rolling hills and misty mountains create a magical landscape. Experience the famous blue train, visit sacred temples, and discover cascading waterfalls in this 4-day highland adventure.",
+      "A 4-day adventure through Sri Lanka’s hill country promises iconic train journeys, lush tea estates, sacred temples, and awe-inspiring waterfalls; here are the most unmissable experiences and destinations to include in your highland itinerary.",
     itinerary: [
       {
         day: 1,
@@ -200,7 +200,7 @@ const tours = [
       "Water Sports",
     ],
     description:
-      "Discover Sri Lanka's stunning southern coast where golden beaches meet turquoise waters, historic Dutch forts tell colonial tales, and majestic whales dance in the ocean. This 5-day coastal journey combines relaxation, adventure, and cultural exploration.",
+      "Sri Lanka's southern coast is renowned for its golden beaches and turquoise waters, creating a perfect backdrop for relaxation and water activities. The region is also rich in history with historic Dutch forts such as Galle Fort, which tell stories of colonial times through their preserved architecture and museums. Additionally, the coast offers spectacular whale watching opportunities, where you can see majestic whales, especially off Mirissa, known for its whale-watching tours.",
     itinerary: [
       {
         day: 1,
@@ -284,9 +284,9 @@ const tours = [
       "/images/Sigiriya.jpg",
       "/images/unawatuna.jpg",
     ],
-    highlights: ["Beach", "History", "Culture", "Nature", "Wild Life"],
+    highlights: ["Beach", "History", "Culture", "Nature"],
     description:
-      "Our 5-day Sri Lanka tour package boasts visits to ancient cities, seaside adventures, & wildlife encounters. Explore the cultural & historical heritage of Sri Lanka by discovering remnants of ancient kingdoms. Head to the southern coast to visit turtle hatcheries & embark on a thrilling jeep safari through a wildlife sanctuary. Relax & let our expert travel agents plan your perfect Sri Lanka tour.",
+      "Our 4-day Sri Lanka tour package boasts visits to ancient cities, seaside adventures,  Explore the cultural & historical heritage of Sri Lanka by discovering remnants of ancient kingdoms. Head to the southern coast to visit turtle hatcheries & Relax & let our expert travel agents plan your perfect Sri Lanka tour.",
     itinerary: [
       {
         day: 1,
@@ -349,7 +349,7 @@ const tours = [
     ],
     highlights: ["Beach", "History", "Culture"],
     description:
-      "Indulge in the serendipity of a 4-day Sri Lanka tour, where adventure and relaxation await. Explore the rich heritage of Kandy, unwind on the beautiful beaches of Bentota, and take a scenic boat ride along the enchanting Madu Ganga river. Treat yourself to a relaxing Fish Foot Therapy session and discover the vibrant city of Colombo, once a bustling hub of the old silk route.",
+      "Here’s a creative take on a similar 5-day Sri Lanka itinerary blending adventure and relaxation, crafted in the evocative style you requested: Embrace the charm of a 5-day Sri Lankan escape, where every turn offers a blend of thrill and tranquility. Immerse yourself in the legend and color of Kandy, lose yourself amidst emerald tea estates in Nuwara Eliya, and surrender to the warm allure of Bentota’s sun-drenched beaches. Drift lazily down the magical Madu Ganga on a scenic river cruise, pausing for a rejuvenating Fish Foot Therapy session as doctor fish tenderly revive your feet. Finally, surrender to the vibrant pulse of Colombo, where  of the old silk route linger in bustling markets and colonial facades.",
     itinerary: [
       {
         day: 1,
@@ -423,10 +423,9 @@ const tours = [
       "Beach Relaxation",
       "Whale Watching",
       "Historic Forts",
-      "Water Sports",
     ],
     description:
-      "Discover Sri Lanka's stunning southern coast where golden beaches meet turquoise waters, historic Dutch forts tell colonial tales, and majestic whales dance in the ocean. This 5-day coastal journey combines relaxation, adventure, and cultural exploration.",
+      "Discover Sri Lanka in 12 unforgettable days! This seminar unveils a curated journey through golden beaches, lush jungles, thrilling wildlife safaris, ancient cities, and scenic highlands—expertly crafted for travelers seeking adventure, culture, and natural beauty. Join us and explore the island’s most stunning and diverse destinations like never before.",
     itinerary: [
       {
         day: 1,
@@ -570,8 +569,7 @@ const tours = [
       "Beach time",
     ],
     description:
-      "A 6‑day tour through Sri Lanka combining cultural sites, wildlife safaris, highlands and beaches." +
-      " Visit Kandy, Nuwara Eliya, Udawalawe, Galle, and Colombo.",
+      "Experience Sri Lanka in 6 unforgettable days! This seminar presents a journey through cultural treasures, lush highlands, thrilling safaris, and coastal charm. Explore Kandy’s Temple of the Tooth, Nuwara Eliya’s tea estates, Udawalawe’s elephants, historic Galle Fort, and unwind on stunning beaches. Discover the perfect blend of adventure and serenity.",
     itinerary: [
       {
         day: 1,
@@ -664,7 +662,7 @@ const tours = [
       "Beach relaxation",
     ],
     description:
-      "A perfectly paced 7‑day journey highlighting cultural heritage, hill country and coastal life.",
+      "Discover Sri Lanka’s charm on a perfectly paced 7-day tour blending culture, nature, and coast. Climb the iconic Sigiriya Rock, experience Kandy’s traditions, explore lush tea country, spot wildlife on a Yala safari, and unwind on golden beaches. A seamless adventure through the island’s most captivating highlights awaits.",
     itinerary: [
       {
         day: 1,
@@ -765,7 +763,7 @@ const tours = [
       "Colombo",
     ],
     description:
-      "Embark on an 8-day journey through Sri Lanka, exploring Sigiriya’s rock fortress, the Dambulla Cave Temple, and Kandy’s cultural heritage. Visit Nuwara Eliya’s picturesque tea plantations, enjoy a thrilling safari in Yala National Park, relax on Bentota’s beaches, and end in Colombo, experiencing the perfect mix of culture, nature, adventure, and relaxation.",
+      "Journey through Sri Lanka in 8 unforgettable days—discover Sigiriya’s ancient fortress, marvel at Dambulla’s cave temples, and soak in Kandy’s vibrant culture. Wander tea-filled hills of Nuwara Eliya, spot wildlife on a Yala safari, unwind on Bentota’s beaches, and explore the energy of Colombo. A perfect blend of adventure and serenity.",
     itinerary: [
       {
         day: 1,
@@ -874,7 +872,7 @@ const tours = [
       "Colombo",
     ],
     description:
-      "Pamper yourself to luxury & comfort on your 5-day Sri Lanka Tour. Experience natural wonders, unveiling cultural treasures in the middle of the island. Immerse in rich history, embark on thrilling river adventures, & unwind on golden shores. Explore a diverse & memorable exploration of Sri Lanka's exceptional natural beauty, with a special highlight amidst the lush, verdant rainforests.",
+      "Indulge in luxury on a 5-day Sri Lanka escape blending comfort, culture, and nature. Discover Sigiriya’s majesty, Dambulla’s sacred caves, and Kandy’s heritage. Savor tea country serenity, venture into lush rainforests, cruise rivers, and unwind on Bentota’s golden beaches. A richly rewarding journey through Sri Lanka’s finest landscapes and history",
     itinerary: [
       {
         day: 1,
@@ -981,7 +979,7 @@ const tours = [
       "Colombo city",
     ],
     description:
-      "Your 9-day Sri Lanka tour package will take you on a rollercoaster of events, from the warmest to the coldest climates, from rural culture to modernity, from ancient history to the 20th century, and from the central hills to the crystal-clear beaches. Leave the hard task of planning to our travel experts & enjoy your Sri Lankan-style cocktail on the golden shore of Bentota Beach with your family!",
+      "Experience Sri Lanka’s contrasts on a vibrant 9-day adventure—from coastal Negombo to the misty hills of Nuwara Eliya, ancient culture in Kandy to Colombo’s modern buzz. Encounter wildlife in Yala, unwind on Bentota’s golden shores, and enjoy a seamless, family-friendly escape crafted by our expert travel team.",
     itinerary: [
       {
         day: 1,
@@ -1105,7 +1103,7 @@ const tours = [
       "City life in Colombo",
     ],
     description:
-      "Our tour experts will help you plan an unforgettable journey around this paradise island in just eight days. Visit the breathtaking archaeological, historical, & cultural sites of this beautiful island. This Sri Lanka tour also includes a visit to Nuwara Eliya, nicknamed `Little England,` for its cold, tingly climate. And don’t forget to witness Sri Lanka’s incredible wildlife and pristine beaches!",
+      "Embark on an unforgettable 8-day journey across Sri Lanka’s stunning landscapes and rich heritage. Explore ancient cities, serene temples, misty hill towns, and lush tea plantations. Spot exotic wildlife on a Yala safari, unwind on Bentota’s golden beach, and experience vibrant Colombo city life—an ideal mix of culture and nature.",
     itinerary: [
       {
         day: 1,
@@ -1212,12 +1210,9 @@ const tours = [
       "Romantic canal ride",
       "Cultural triangle",
       "Highlands",
-      "Safari",
-      "Coastal seclusion",
-      "Beach luxury",
     ],
     description:
-      "Experience a romantic 15-day escape in Sri Lanka, where luxury and adventure blend seamlessly. This itinerary invites you to indulge in intimate moments while exploring cultural highlights, enjoying magnificent views of the central highlands, embarking on thrilling game drives, relaxing on secluded beaches, and strolling through the lively forts, creating unforgettable memories on this enchanting island.",
+      "Enjoy a romantic 15-day getaway in Sri Lanka, where adventure meets elegance. Discover ancient wonders, misty highlands, and lush landscapes. Share quiet moments on scenic beaches, explore vibrant forts, and experience thrilling safaris. This intimate journey offers the perfect blend of relaxation, culture, and romance for unforgettable island memories",
     itinerary: [
       {
         day: 1,
@@ -1415,7 +1410,7 @@ const tours = [
     ],
     highlights: ["Kandy", "Hatton", "Beach"],
     description:
-      "Embark on a romantic 7-day honeymoon journey through Sri Lanka's most enchanting destinations. From the tranquil beaches of Negombo to the cultural heart of Kandy, the tea plantations of Hatton, and the historic charm of Galle, explore the intricacies of Sri Lanka as you revel in the presence of your lover.",
+      "Discover Sri Lanka in 7 unforgettable days. Start in coastal Negombo, then journey to the cultural heart of Kandy. Explore the serene tea country of Hatton and unwind on the stunning beaches of Galle. This perfectly balanced itinerary blends heritage, highlands, and seaside bliss for a memorable island escape",
     itinerary: [
       {
         day: 1,
@@ -1720,7 +1715,7 @@ export function ToursSection() {
                         className="flex-1 bg-emerald-600 hover:bg-emerald-700 text-sm sm:text-base"
                         onClick={() => handleBookNow(tour)}
                       >
-                        View Detailss
+                        View Details
                       </Button>
                       <Button
                         variant="outline"

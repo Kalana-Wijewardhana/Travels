@@ -90,7 +90,7 @@ export function HowItWorks() {
             How It <span className="text-emerald-600">Works</span>
           </h2>
           <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-            Simple steps to plan your perfect Sri Lankan adventure
+            Easy steps to craft your dream Sri Lankan getaway.
           </p>
         </motion.div>
 

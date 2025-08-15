@@ -51,7 +51,7 @@ export function AboutSection() {
             About <span className="text-emerald-600">Us</span>
           </h2>
           <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-            Discover the story behind Sri Lanka Travels and our passion for authentic experiences
+            Learn the story of Sri Lanka Travels and our dedication to creating authentic, unforgettable island experiences.
           </p>
         </motion.div>
 
@@ -68,14 +68,13 @@ export function AboutSection() {
               Our Story
             </motion.h3>
             <motion.p variants={fadeInUp} className="text-slate-600 leading-relaxed">
-              Founded in 2015, Sri Lanka Travels began with a simple mission: to share the authentic beauty and culture
-              of Sri Lanka with travelers from around the world. What started as a small team of passionate local guides
-              has grown into a leading tour operator, but our core values remain unchanged.
+              Since 2015, Sri Lanka Travels has been dedicated to showcasing the island’s true essence to travelers worldwide.
+              What began as a small group of local travel enthusiasts has grown into a trusted tour provider known for personalized, meaningful journeys. 
+              Our mission is rooted in sustainable tourism supporting local communities while delivering enriching experiences. 
             </motion.p>
             <motion.p variants={fadeInUp} className="text-slate-600 leading-relaxed">
-              We believe in sustainable tourism that benefits local communities while providing unforgettable
-              experiences for our guests. Our team of expert guides are all locals with deep knowledge of Sri Lanka's
-              history, culture, and hidden gems.
+              Every itinerary is designed with care by knowledgeable local experts who are passionate about sharing Sri Lanka’s heritage, natural beauty, and lesser-known treasures. 
+              Whether it’s a cultural discovery or a scenic adventure, we’re here to help you connect with the soul of Sri Lanka.
             </motion.p>
             <motion.div variants={fadeInUp} className="pt-4">
               <Button className="bg-emerald-600 hover:bg-emerald-700">Meet Our Team</Button>
@@ -134,22 +133,22 @@ export function AboutSection() {
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                title: "Authentic Experiences",
+                title: "True Cultural Connections",
                 description:
-                  "We go beyond tourist attractions to provide genuine cultural immersion and local connections.",
+                  "We create meaningful travel by offering real insight into local life, traditions, and heritage—going far beyond the typical tourist path.",
                 icon: Heart,
                 color: "bg-red-100 text-red-600",
               },
               {
                 title: "Sustainable Tourism",
                 description:
-                  "We're committed to environmentally responsible practices and supporting local communities.",
+                  "We prioritize eco-friendly travel and actively support local communities, ensuring every journey helps preserve Sri Lanka’s natural beauty and cultural heritage.",
                 icon: Globe,
                 color: "bg-emerald-100 text-emerald-600",
               },
               {
                 title: "Expert Local Guides",
-                description: "Our guides are passionate locals with deep knowledge and authentic stories to share.",
+                description: "Our experienced local guides bring Sri Lanka to life with their in-depth knowledge, personal stories, and genuine passion for the island’s culture and history.",
                 icon: Users,
                 color: "bg-blue-100 text-blue-600",
               },
