@@ -248,8 +248,7 @@ export function ExperienceSection() {
             Traveler <span className="text-emerald-600">Experiences</span>
           </h2>
           <p className="text-xl text-slate-600 max-w-2xl mx-auto mb-8">
-            Discover Sri Lanka through the eyes of fellow travelers and share
-            your own adventures
+            See Sri Lanka through the journeys of fellow explorers and share your own unforgettable moments.
           </p>
 
           <div className="flex justify-center gap-4 mb-4">
