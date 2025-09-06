@@ -27,6 +27,7 @@ const tours = [
     rating: 4.9,
     price: "From $299",
     images: [
+      "/images/Colombo.jpg",
       "/images/Sigiriya.jpg",
       "/images/dambulla.jpg",
       "/images/polonnaruwa.jpg",
@@ -281,8 +282,9 @@ const tours = [
     price: "From $499",
     images: [
       "/images/kandy.jpg",
-      "/images/Sigiriya.jpg",
-      "/images/unawatuna.jpg",
+      "/images/sigiriya3.jpg",
+      "/images/unawatuna2.webp",
+      "/images/Colombo2.jpg",
     ],
     highlights: ["Beach", "History", "Culture", "Nature"],
     description:
@@ -343,9 +345,9 @@ const tours = [
     rating: 4.9,
     price: "From $499",
     images: [
-      " /images/Sigiriya.jpg",
-      "/images/kandy.jpg",
-      "/images/unawatuna.jpg",
+      "/images/Sigiriya2.jpg",
+      "/images/kandy-1.jpg",
+      "/images/bentota-surf.jpg",
     ],
     highlights: ["Beach", "History", "Culture"],
     description:
@@ -415,15 +417,11 @@ const tours = [
     rating: 4.9,
     price: "From $499",
     images: [
-      "/images/Mirissa.jpg",
-      "/images/galle.jpg",
-      "/images/unawatuna.jpg",
+      "/images/polonnaruwa1.webp",
+      "/images/sigiriya4.jpg",
+      "/images/sinaharaja1.jpeg",
     ],
-    highlights: [
-      "Beach Relaxation",
-      "Whale Watching",
-      "Historic Forts",
-    ],
+    highlights: ["Beach Relaxation", "Whale Watching", "Historic Forts"],
     description:
       "Discover Sri Lanka in 12 unforgettable days! This seminar unveils a curated journey through golden beaches, lush jungles, thrilling wildlife safaris, ancient cities, and scenic highlands—expertly crafted for travelers seeking adventure, culture, and natural beauty. Join us and explore the island’s most stunning and diverse destinations like never before.",
     itinerary: [
@@ -557,9 +555,10 @@ const tours = [
     rating: 4.9,
     price: "From $499",
     images: [
-      "/images/kandy.jpg",
-      "/images/Sigiriya.jpg",
-      "/images/unawatuna.jpg",
+      "/images/kandy4.jpg",
+      "/images/nuwaraeliya.png",
+      "/images/udawalawa.jpeg",
+      "/images/galle1.webp",
     ],
     highlights: [
       "Temple of the Tooth",
@@ -650,9 +649,10 @@ const tours = [
     rating: 4.9,
     price: "From $499",
     images: [
-      "/images/kandy.jpg",
-      "/images/Sigiriya.jpg",
-      "/images/unawatuna.jpg",
+      "/images/dambulla.jpg",
+      "/images/Sigiriya5.jpg",
+      "/images/yala.jpg",
+      "/images/Bentota2.jpg",
     ],
     highlights: [
       "Sigiriya",
@@ -858,9 +858,9 @@ const tours = [
     rating: 4.9,
     price: "From $499",
     images: [
-      "/images/kandy.jpg",
-      "/images/Sigiriya.jpg",
-      "/images/unawatuna.jpg",
+      "/images/kandy5.webp",
+      "/images/Sigiriya2.jpg",
+      "/images/kitulgala.webp",
     ],
     highlights: [
       "Sigiriya",
@@ -966,9 +966,10 @@ const tours = [
     rating: 4.9,
     price: "From $499",
     images: [
-      "/images/kandy.jpg",
-      "/images/Sigiriya.jpg",
-      "/images/unawatuna.jpg",
+      "/images/negombo.webp",
+      "/images/kandy2.jpg",
+      "/images/yala2.jpg",
+      "/images/Colombo.jpg",
     ],
     highlights: [
       "Negombo canal life",
@@ -1089,9 +1090,10 @@ const tours = [
     rating: 4.9,
     price: "From $499",
     images: [
-      "/images/kandy.jpg",
-      "/images/Sigiriya.jpg",
-      "/images/unawatuna.jpg",
+      "/images/negombo2.jpg",
+      "/images/sigiriya6.jpg",
+      "/images/kithulgala2.webp",
+      "/images/unawatuna3.jpg",
     ],
     highlights: [
       "Sigiriya",
@@ -1202,15 +1204,12 @@ const tours = [
     rating: 4.9,
     price: "From $499",
     images: [
-      "/images/kandy.jpg",
-      "/images/Sigiriya.jpg",
-      "/images/unawatuna.jpg",
+      "/images/negombo3.webp",
+      "/images/sigiriya3.jpg",
+      "/images/pussellawa.jpg",
+      "/images/ella.webp",
     ],
-    highlights: [
-      "Romantic canal ride",
-      "Cultural triangle",
-      "Highlands",
-    ],
+    highlights: ["Romantic canal ride", "Cultural triangle", "Highlands"],
     description:
       "Enjoy a romantic 15-day getaway in Sri Lanka, where adventure meets elegance. Discover ancient wonders, misty highlands, and lush landscapes. Share quiet moments on scenic beaches, explore vibrant forts, and experience thrilling safaris. This intimate journey offers the perfect blend of relaxation, culture, and romance for unforgettable island memories",
     itinerary: [
@@ -1404,8 +1403,8 @@ const tours = [
     rating: 4.9,
     price: "From $499",
     images: [
-      "/images/kandy.jpg",
-      "/images/Sigiriya.jpg",
+      "/images/negombo.webp",
+      "/images/hatton.jpg",
       "/images/unawatuna.jpg",
     ],
     highlights: ["Kandy", "Hatton", "Beach"],
