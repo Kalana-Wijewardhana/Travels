@@ -16,7 +16,7 @@ export function Footer() {
   const socialLinks = [
     {
       icon: Facebook,
-      href: "https://www.facebook.com/share/1BgfpKU5aR/",
+      href: "https://www.facebook.com/profile.php?id=100064902643262&mibextid=ZbWKwL",
       label: "Facebook",
     },
     {
