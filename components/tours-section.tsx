@@ -880,8 +880,6 @@ const tours = [
         description:
           "Kandy is a city of immense cultural heritage. Visit Sri Lanka's Spice Village to understand its rich culinary flavours. Wander around the Royal Botanical Gardens and participate in a soothing yoga and relaxation session. End your day with an evening cultural dance performance.",
         activities: [
-          "Touch down in paradise Sri Lanka",
-          "Greetings by Olanka representative",
           "Visit the cashew village",
           "Watch elephants at Pinnawala",
           "Visit the sacred Dalada Maligawa",
