@@ -58,7 +58,7 @@ export const SupportConfirmationEmail = ({
           <Text style={paragraph}>Thank you for your patience,</Text>
           <Text style={paragraph}>The Sri Lanka Travels Support Team</Text>
           <Text style={footer}>
-            © 2024 Sri Lanka Travels. All rights reserved.
+            © 2024 Anuja Travels. All rights reserved.
             <br />
             <Link href="https://srilankatravels.com" style={link}>
               srilankatravels.com

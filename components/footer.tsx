@@ -158,7 +158,7 @@ export function Footer() {
           viewport={{ once: true }}
           className="border-t border-slate-800 mt-12 pt-8 text-center text-slate-400"
         >
-          <p>&copy; 2024 Sri Lanka Travels. All rights reserved.</p>
+          <p>&copy; 2024 Anuja Travels. All rights reserved.</p>
         </motion.div>
       </div>
     </footer>

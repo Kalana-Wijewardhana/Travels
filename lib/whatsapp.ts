@@ -1,5 +1,5 @@
 // lib/whatsapp.ts
-export const WHATSAPP_NUMBER = "+94766034211"; // Replace with your actual WhatsApp number
+export const WHATSAPP_NUMBER = "+94773291468"; // Replace with your actual WhatsApp number
 
 export function createWhatsAppUrl(
   message: string,
