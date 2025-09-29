@@ -536,7 +536,7 @@ export function TourDetailsModal({
                   </div>
                   <div className="flex items-center space-x-2 text-sm text-slate-600">
                     <Phone className="w-4 h-4" />
-                    <span>+94 77 123 4567</span>
+                    <span>+94 77 329 1468</span>
                   </div>
                 </div>
               </div>
