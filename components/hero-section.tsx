@@ -52,9 +52,9 @@ const slideInFromLeft = {
 
 const heroImages = [
   {
-    src: "/images/banner/banner1.jpg",
-    alt: "Galle Fort - Historic Dutch colonial architecture",
-    // title: "Galle Fort",
+    src: "/images/banner/banner4.jpg",
+    alt: "Nine Arch Bridge - Iconic railway bridge in Ella",
+    // title: "Nine Arch Bridge",
   },
   {
     src: "/images/banner/banner2.jpg",
@@ -65,11 +65,6 @@ const heroImages = [
     src: "/images/banner/banner3.jpg",
     alt: "Temple of the Tooth - Sacred Buddhist temple in Kandy",
     // title: "Temple of Tooth",
-  },
-  {
-    src: "/images/banner/banner4.jpg",
-    alt: "Nine Arch Bridge - Iconic railway bridge in Ella",
-    // title: "Nine Arch Bridge",
   },
 ];
 
